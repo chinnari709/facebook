@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #007bff; /* Blue background color */
+        }
+
+        .flex-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px; /* Flexbox width */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .delete-button, .reply-button {
+            padding: 10px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .delete-button {
+            background-color: #ff0000; /* Red background color */
+        }
+
+        .reply-button {
+            background-color: #002fff; /* Blue background color */
+        }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            text-align: center;
+        }
+
+        .modal-button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #4caf50; /* Green background color for success */
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .success-button {
+            padding: 10px;
+            background-color: #007bff; /* Blue background color for the button */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Facebook Page Integration</title>
+</head>
+<body>
+    <div class="flex-container">
+        <header>
+            <h3>Facebook Page Integration</h3>
+            <p>Integrated page:<b> Amazon Business</b></p>
+        </header>
+        <button class="delete-button" onclick="openModal()">Delete Integration</button>
+        <button onclick="redirectToAgent()" class="reply-button">Reply to Messages</button>
+
+        <!-- Delete Confirmation Modal -->
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <p>Are you sure you want to delete the integration?</p>
+                <button class="modal-button" onclick="confirmDelete()">Yes</button>
+                <button class="modal-button" onclick="closeModal()">No</button>
+            </div>
+        </div>
+
+        <!-- Integration Deleted Success Modal -->
+        <div id="successModal" class="success-modal">
+            <p>Integration deleted!</p>
+            <button class="success-button" onclick="closeSuccessModal()">Close</button>
+        </div>
+
+        <script>
+            function redirectToAgent() {
+                window.location.href = "agent screen.html";
+            }
+
+            function openModal() {
+                document.getElementById('deleteModal').style.display = 'block';
+            }
+
+            function closeModal() {
+                document.getElementById('deleteModal').style.display = 'none';
+            }
+
+            function confirmDelete() {
+                // Add logic to perform the deletion here
+                // For demonstration purposes, show the success modal
+                document.getElementById('deleteModal').style.display = 'none';
+                document.getElementById('successModal').style.display = 'block';
+            }
+
+            function closeSuccessModal() {
+                // Close the success modal
+                document.getElementById('successModal').style.display = 'none';
+            }
+        </script>
+    </div>
+</body>
+</html>

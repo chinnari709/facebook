@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #007bff; /* Blue background color */
+        }
+
+        .flex-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px; /* Flexbox width */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .connect-button {
+            padding: 10px;
+            background-color: #0d79ee !important;
+            color: #f9f5f5;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        h3{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title>Facebook Page Integration</title>
+</head>
+<body>
+    <div class="flex-container">
+        <header>
+            <h3>Facebook Page Integration</h3>
+        </header>
+        <button onclick="redirectToDelete()" class="connect-button">Connect Page</button>
+        <script>
+            function redirectToDelete() {
+                window.location.href = "Delete.html";
+            }
+        </script>
+    </div>
+</body>
+</html>

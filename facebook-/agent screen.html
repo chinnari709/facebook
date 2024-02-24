@@ -1,0 +1,277 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .header {
+            width: 50%;
+            margin-bottom: 30px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        .header h3 {
+            margin: -6px;
+        }
+
+        aside.another-left {
+            width: 5%;
+            height: flex;
+            background-color: #3498db;
+            padding: 4px;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        aside.another-left img {
+            width: 50%;
+            margin-bottom: 30px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        aside.another-left img:hover {
+            opacity: 0.5ms;
+        }
+
+        aside.another-left .profile-img {
+            width: 50%;
+            height: 50px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            margin-top: auto;
+        }
+
+        .online {
+            position: relative;
+        }
+
+        .online::after {
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 100%;
+            background: #008000;
+            bottom: 20px;
+            left: 8px;
+        }
+
+        .left {
+            width: 20%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .conversations {
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .conversation-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .conversation-info {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        .checkbox-input {
+            /* Increase the checkbox size */
+            width: 20px;
+            height: 25px;
+        }
+
+        .facebook-type {
+            font-size: 12px; /* Set the desired font size */
+        }
+
+        .container {
+            flex-grow: 1;
+            padding: 20px;
+            height: (100vh - 100px);
+            box-sizing: border-box;
+            border-left: 1px solid #d6d3d3;
+            border-right: 1px solid #d6d3d3;
+        }
+
+        .chat-container {
+            height: calc(100vh - 60px);
+            overflow-y: scroll;
+            margin-bottom: 20px;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        .chat-message.right {
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .message-box {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        aside.right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 20%;
+            height: flex;
+            background-color: #f2f2f2;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .customer-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .customer-details p {
+            margin: 5px 0;
+        }
+
+        .left.hide-left {
+            display: none;
+        }
+        .hide-container {
+            display: none;
+        }
+
+    </style>
+    <title>Agent Screen</title>
+</head>
+<body>
+
+    <aside class="another-left">
+        <img src="images/recyle1.jpg" alt="Recycle Bin" title="Recycle Bin">
+        <img src="images/messenger1.png" alt="Messages" title="Messages">
+        <img src="images/friends.jpg" alt="Friends" title="Friends">
+        <img src="images/trading1.jpg" alt="Trading" title="Trading">
+        <img src="images/profilepic2.jpg" alt="Profile Photo" class="profile-img" title="Profile Photo">
+        <div class="online"></div>
+    </aside>
+
+    <aside class="left hide-left">
+        <div class="header">
+            <h3>Conversations</h3>
+        </div>
+        <div class="conversations">
+            <div class="conversation-item">
+                <input type="checkbox" class="checkbox-input" id="toggleContainerCheckbox">
+                <label for="toggleContainerCheckbox"></label>
+                <div class="conversation-info">
+                    <p><b>Amit RG</b></p>
+                    <p class="facebook-type">Facebook DM</p>
+                </div>
+            </div>
+            </div>
+            <div class="posts">
+                <p><b>Awesome product</b></p>
+                <p>Hey there! I probably did one of the best</p>
+            </div>
+            <div class="conversation-item">
+                <input type="checkbox" class="checkbox-input">
+                <div class="conversation-info">
+                    <p><b>Hiten Saxena</b></p>
+                    <p class="facebook-type">Facebook Posts</p>
+                </div>
+            </div>
+        </div>
+        <div class="posts">
+            <p><b>Available in store?</b></p>
+            <p>Hi, do you have any T-shirt available in store?</p>
+        </div>
+    </aside>
+    <div class="container hide-container">
+        <div class="chat-container">
+            <div class="chat-message-left">
+                <p><strong>Amit RG:</strong> Is it in stock right now?</p>
+                <p class="timestamp">January 25, 2023, 10:30 AM</p>
+            </div>
+            <div class="chat-message right">
+                <p><strong>Richard Pannel:</strong> We have 3 left in stock! If you order before 8 PM, we can ship it today.</p>
+                <p class="timestamp">January 25, 2023, 11:15 AM</p>
+            </div>
+        </div>
+        <div class="message-box">
+            <label for="message">Message Hiten Amit RG:</label>
+            <input type="text" id="message" name="message">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <aside class="right">
+        <img src="images/profilepic2.jpg" alt="Profile Image" class="profile-img">
+        <div class="customer-details">
+            <p>Email: amitrg@example.com</p>
+            <p>First Name: Amit</p>
+            <p>Last Name: RG</p>
+            <p><a href="#">View more details</a></p>
+        </div>
+    </aside>
+
+    <script>
+    
+
+    function toggleConversation() {
+            var leftContainer = document.querySelector('.left');
+            
+            // Toggle the 'hide-left' class
+            leftContainer.classList.toggle('hide-left');
+        }
+
+        // Add an event listener to the "Messages" button
+        var messagesButton = document.querySelector('.another-left img[title="Messages"]');
+        messagesButton.addEventListener('click', function() {
+            // Toggle the left container visibility
+            toggleConversation();
+        });
+    </script>
+    <script>
+        // Function to toggle the container visibility
+        function toggleContainer() {
+            var container = document.querySelector('.container');
+            container.classList.toggle('hide-container');
+        }
+        var toggleContainerCheckbox = document.querySelector('.checkbox-input');
+    toggleContainerCheckbox.addEventListener('change', function() {
+        // Toggle the container visibility when the checkbox is clicked
+        toggleContainer();
+    });
+    </script>
+    
+</body>
+</html> 
